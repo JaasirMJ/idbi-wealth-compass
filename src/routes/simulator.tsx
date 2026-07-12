@@ -6,7 +6,7 @@ import { formatINR } from "@/lib/mockData";
 import { GitBranch, TrendingUp } from "lucide-react";
 
 export const Route = createFileRoute("/simulator")({
-  component: Simulator;
+  component: Simulator,
 });
 
 function Simulator() {
