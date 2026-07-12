@@ -14,19 +14,25 @@ import { Route as TransactionsRouteImport } from './routes/transactions'
 import { Route as TimelineRouteImport } from './routes/timeline'
 import { Route as SimulatorRouteImport } from './routes/simulator'
 import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as SandboxRouteImport } from './routes/sandbox'
 import { Route as RiskRouteImport } from './routes/risk'
 import { Route as ReportsRouteImport } from './routes/reports'
 import { Route as ReasoningRouteImport } from './routes/reasoning'
 import { Route as PipelineRouteImport } from './routes/pipeline'
+import { Route as NotificationsRouteImport } from './routes/notifications'
 import { Route as LoadingRouteImport } from './routes/loading'
 import { Route as InvestmentsRouteImport } from './routes/investments'
 import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as HealthRouteImport } from './routes/health'
 import { Route as GoalsRouteImport } from './routes/goals'
 import { Route as ForecastRouteImport } from './routes/forecast'
+import { Route as ExecutiveRouteImport } from './routes/executive'
 import { Route as EducationRouteImport } from './routes/education'
+import { Route as DemoRouteImport } from './routes/demo'
 import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as ComplianceRouteImport } from './routes/compliance'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as AgentsRouteImport } from './routes/agents'
 import { Route as AdvisorRouteImport } from './routes/advisor'
 import { Route as ActionsRouteImport } from './routes/actions'
 import { Route as IndexRouteImport } from './routes/index'
@@ -56,6 +62,11 @@ const SettingsRoute = SettingsRouteImport.update({
   path: '/settings',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SandboxRoute = SandboxRouteImport.update({
+  id: '/sandbox',
+  path: '/sandbox',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RiskRoute = RiskRouteImport.update({
   id: '/risk',
   path: '/risk',
@@ -74,6 +85,11 @@ const ReasoningRoute = ReasoningRouteImport.update({
 const PipelineRoute = PipelineRouteImport.update({
   id: '/pipeline',
   path: '/pipeline',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotificationsRoute = NotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LoadingRoute = LoadingRouteImport.update({
@@ -106,9 +122,19 @@ const ForecastRoute = ForecastRouteImport.update({
   path: '/forecast',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExecutiveRoute = ExecutiveRouteImport.update({
+  id: '/executive',
+  path: '/executive',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EducationRoute = EducationRouteImport.update({
   id: '/education',
   path: '/education',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DemoRoute = DemoRouteImport.update({
+  id: '/demo',
+  path: '/demo',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DashboardRoute = DashboardRouteImport.update({
@@ -116,9 +142,19 @@ const DashboardRoute = DashboardRouteImport.update({
   path: '/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ComplianceRoute = ComplianceRouteImport.update({
+  id: '/compliance',
+  path: '/compliance',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AgentsRoute = AgentsRouteImport.update({
+  id: '/agents',
+  path: '/agents',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdvisorRoute = AdvisorRouteImport.update({
@@ -141,19 +177,25 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/actions': typeof ActionsRoute
   '/advisor': typeof AdvisorRoute
+  '/agents': typeof AgentsRoute
   '/auth': typeof AuthRoute
+  '/compliance': typeof ComplianceRoute
   '/dashboard': typeof DashboardRoute
+  '/demo': typeof DemoRoute
   '/education': typeof EducationRoute
+  '/executive': typeof ExecutiveRoute
   '/forecast': typeof ForecastRoute
   '/goals': typeof GoalsRoute
   '/health': typeof HealthRoute
   '/insights': typeof InsightsRoute
   '/investments': typeof InvestmentsRoute
   '/loading': typeof LoadingRoute
+  '/notifications': typeof NotificationsRoute
   '/pipeline': typeof PipelineRoute
   '/reasoning': typeof ReasoningRoute
   '/reports': typeof ReportsRoute
   '/risk': typeof RiskRoute
+  '/sandbox': typeof SandboxRoute
   '/settings': typeof SettingsRoute
   '/simulator': typeof SimulatorRoute
   '/timeline': typeof TimelineRoute
@@ -164,19 +206,25 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/actions': typeof ActionsRoute
   '/advisor': typeof AdvisorRoute
+  '/agents': typeof AgentsRoute
   '/auth': typeof AuthRoute
+  '/compliance': typeof ComplianceRoute
   '/dashboard': typeof DashboardRoute
+  '/demo': typeof DemoRoute
   '/education': typeof EducationRoute
+  '/executive': typeof ExecutiveRoute
   '/forecast': typeof ForecastRoute
   '/goals': typeof GoalsRoute
   '/health': typeof HealthRoute
   '/insights': typeof InsightsRoute
   '/investments': typeof InvestmentsRoute
   '/loading': typeof LoadingRoute
+  '/notifications': typeof NotificationsRoute
   '/pipeline': typeof PipelineRoute
   '/reasoning': typeof ReasoningRoute
   '/reports': typeof ReportsRoute
   '/risk': typeof RiskRoute
+  '/sandbox': typeof SandboxRoute
   '/settings': typeof SettingsRoute
   '/simulator': typeof SimulatorRoute
   '/timeline': typeof TimelineRoute
@@ -188,19 +236,25 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/actions': typeof ActionsRoute
   '/advisor': typeof AdvisorRoute
+  '/agents': typeof AgentsRoute
   '/auth': typeof AuthRoute
+  '/compliance': typeof ComplianceRoute
   '/dashboard': typeof DashboardRoute
+  '/demo': typeof DemoRoute
   '/education': typeof EducationRoute
+  '/executive': typeof ExecutiveRoute
   '/forecast': typeof ForecastRoute
   '/goals': typeof GoalsRoute
   '/health': typeof HealthRoute
   '/insights': typeof InsightsRoute
   '/investments': typeof InvestmentsRoute
   '/loading': typeof LoadingRoute
+  '/notifications': typeof NotificationsRoute
   '/pipeline': typeof PipelineRoute
   '/reasoning': typeof ReasoningRoute
   '/reports': typeof ReportsRoute
   '/risk': typeof RiskRoute
+  '/sandbox': typeof SandboxRoute
   '/settings': typeof SettingsRoute
   '/simulator': typeof SimulatorRoute
   '/timeline': typeof TimelineRoute
@@ -213,19 +267,25 @@ export interface FileRouteTypes {
     | '/'
     | '/actions'
     | '/advisor'
+    | '/agents'
     | '/auth'
+    | '/compliance'
     | '/dashboard'
+    | '/demo'
     | '/education'
+    | '/executive'
     | '/forecast'
     | '/goals'
     | '/health'
     | '/insights'
     | '/investments'
     | '/loading'
+    | '/notifications'
     | '/pipeline'
     | '/reasoning'
     | '/reports'
     | '/risk'
+    | '/sandbox'
     | '/settings'
     | '/simulator'
     | '/timeline'
@@ -236,19 +296,25 @@ export interface FileRouteTypes {
     | '/'
     | '/actions'
     | '/advisor'
+    | '/agents'
     | '/auth'
+    | '/compliance'
     | '/dashboard'
+    | '/demo'
     | '/education'
+    | '/executive'
     | '/forecast'
     | '/goals'
     | '/health'
     | '/insights'
     | '/investments'
     | '/loading'
+    | '/notifications'
     | '/pipeline'
     | '/reasoning'
     | '/reports'
     | '/risk'
+    | '/sandbox'
     | '/settings'
     | '/simulator'
     | '/timeline'
@@ -259,19 +325,25 @@ export interface FileRouteTypes {
     | '/'
     | '/actions'
     | '/advisor'
+    | '/agents'
     | '/auth'
+    | '/compliance'
     | '/dashboard'
+    | '/demo'
     | '/education'
+    | '/executive'
     | '/forecast'
     | '/goals'
     | '/health'
     | '/insights'
     | '/investments'
     | '/loading'
+    | '/notifications'
     | '/pipeline'
     | '/reasoning'
     | '/reports'
     | '/risk'
+    | '/sandbox'
     | '/settings'
     | '/simulator'
     | '/timeline'
@@ -283,19 +355,25 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ActionsRoute: typeof ActionsRoute
   AdvisorRoute: typeof AdvisorRoute
+  AgentsRoute: typeof AgentsRoute
   AuthRoute: typeof AuthRoute
+  ComplianceRoute: typeof ComplianceRoute
   DashboardRoute: typeof DashboardRoute
+  DemoRoute: typeof DemoRoute
   EducationRoute: typeof EducationRoute
+  ExecutiveRoute: typeof ExecutiveRoute
   ForecastRoute: typeof ForecastRoute
   GoalsRoute: typeof GoalsRoute
   HealthRoute: typeof HealthRoute
   InsightsRoute: typeof InsightsRoute
   InvestmentsRoute: typeof InvestmentsRoute
   LoadingRoute: typeof LoadingRoute
+  NotificationsRoute: typeof NotificationsRoute
   PipelineRoute: typeof PipelineRoute
   ReasoningRoute: typeof ReasoningRoute
   ReportsRoute: typeof ReportsRoute
   RiskRoute: typeof RiskRoute
+  SandboxRoute: typeof SandboxRoute
   SettingsRoute: typeof SettingsRoute
   SimulatorRoute: typeof SimulatorRoute
   TimelineRoute: typeof TimelineRoute
@@ -340,6 +418,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SettingsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sandbox': {
+      id: '/sandbox'
+      path: '/sandbox'
+      fullPath: '/sandbox'
+      preLoaderRoute: typeof SandboxRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/risk': {
       id: '/risk'
       path: '/risk'
@@ -366,6 +451,13 @@ declare module '@tanstack/react-router' {
       path: '/pipeline'
       fullPath: '/pipeline'
       preLoaderRoute: typeof PipelineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notifications': {
+      id: '/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof NotificationsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/loading': {
@@ -410,11 +502,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ForecastRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/executive': {
+      id: '/executive'
+      path: '/executive'
+      fullPath: '/executive'
+      preLoaderRoute: typeof ExecutiveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/education': {
       id: '/education'
       path: '/education'
       fullPath: '/education'
       preLoaderRoute: typeof EducationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/demo': {
+      id: '/demo'
+      path: '/demo'
+      fullPath: '/demo'
+      preLoaderRoute: typeof DemoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dashboard': {
@@ -424,11 +530,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/compliance': {
+      id: '/compliance'
+      path: '/compliance'
+      fullPath: '/compliance'
+      preLoaderRoute: typeof ComplianceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/auth': {
       id: '/auth'
       path: '/auth'
       fullPath: '/auth'
       preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/agents': {
+      id: '/agents'
+      path: '/agents'
+      fullPath: '/agents'
+      preLoaderRoute: typeof AgentsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/advisor': {
@@ -459,19 +579,25 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ActionsRoute: ActionsRoute,
   AdvisorRoute: AdvisorRoute,
+  AgentsRoute: AgentsRoute,
   AuthRoute: AuthRoute,
+  ComplianceRoute: ComplianceRoute,
   DashboardRoute: DashboardRoute,
+  DemoRoute: DemoRoute,
   EducationRoute: EducationRoute,
+  ExecutiveRoute: ExecutiveRoute,
   ForecastRoute: ForecastRoute,
   GoalsRoute: GoalsRoute,
   HealthRoute: HealthRoute,
   InsightsRoute: InsightsRoute,
   InvestmentsRoute: InvestmentsRoute,
   LoadingRoute: LoadingRoute,
+  NotificationsRoute: NotificationsRoute,
   PipelineRoute: PipelineRoute,
   ReasoningRoute: ReasoningRoute,
   ReportsRoute: ReportsRoute,
   RiskRoute: RiskRoute,
+  SandboxRoute: SandboxRoute,
   SettingsRoute: SettingsRoute,
   SimulatorRoute: SimulatorRoute,
   TimelineRoute: TimelineRoute,
@@ -481,13 +607,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

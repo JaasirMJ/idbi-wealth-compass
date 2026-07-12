@@ -22,16 +22,23 @@ import {
   History,
   Zap,
   Brain,
+  Bot,
+  BarChart3,
+  PlugZap,
+  ShieldCheck,
+  PlayCircle,
 } from "lucide-react";
 import { AuraLogo } from "./AuraLogo";
 import { AIAvatar } from "./AIAvatar";
 import { customer } from "@/lib/mockData";
 
 const nav = [
+  { to: "/demo", label: "Demo Mode", icon: PlayCircle },
   { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { to: "/twin", label: "Financial Twin", icon: Cpu },
   { to: "/health", label: "Financial Health", icon: HeartPulse },
   { to: "/advisor", label: "AI Advisor", icon: Sparkles },
+  { to: "/agents", label: "AI Agents", icon: Bot },
   { to: "/reasoning", label: "AI Reasoning", icon: Brain },
   { to: "/pipeline", label: "AI Architecture", icon: Network },
   { to: "/actions", label: "Next Best Actions", icon: Zap },
@@ -43,8 +50,12 @@ const nav = [
   { to: "/investments", label: "Investments", icon: TrendingUp },
   { to: "/risk", label: "Risk Profile", icon: ShieldAlert },
   { to: "/simulator", label: "Scenario Simulator", icon: GitBranch },
+  { to: "/notifications", label: "Notifications", icon: Bell },
   { to: "/education", label: "Learn", icon: GraduationCap },
   { to: "/reports", label: "Reports", icon: FileBarChart },
+  { to: "/executive", label: "Executive Impact", icon: BarChart3 },
+  { to: "/sandbox", label: "Sandbox APIs", icon: PlugZap },
+  { to: "/compliance", label: "Compliance", icon: ShieldCheck },
   { to: "/settings", label: "Settings", icon: Settings },
 ] as const;
 
