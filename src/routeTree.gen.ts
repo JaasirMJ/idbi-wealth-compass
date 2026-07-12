@@ -9,14 +9,48 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TransactionsRouteImport } from './routes/transactions'
+import { Route as SimulatorRouteImport } from './routes/simulator'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as RiskRouteImport } from './routes/risk'
+import { Route as ReportsRouteImport } from './routes/reports'
 import { Route as PipelineRouteImport } from './routes/pipeline'
 import { Route as LoadingRouteImport } from './routes/loading'
+import { Route as InvestmentsRouteImport } from './routes/investments'
+import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as HealthRouteImport } from './routes/health'
+import { Route as GoalsRouteImport } from './routes/goals'
+import { Route as EducationRouteImport } from './routes/education'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AdvisorRouteImport } from './routes/advisor'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TransactionsRoute = TransactionsRouteImport.update({
+  id: '/transactions',
+  path: '/transactions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SimulatorRoute = SimulatorRouteImport.update({
+  id: '/simulator',
+  path: '/simulator',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RiskRoute = RiskRouteImport.update({
+  id: '/risk',
+  path: '/risk',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportsRoute = ReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PipelineRoute = PipelineRouteImport.update({
   id: '/pipeline',
   path: '/pipeline',
@@ -27,9 +61,29 @@ const LoadingRoute = LoadingRouteImport.update({
   path: '/loading',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InvestmentsRoute = InvestmentsRouteImport.update({
+  id: '/investments',
+  path: '/investments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsightsRoute = InsightsRouteImport.update({
+  id: '/insights',
+  path: '/insights',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HealthRoute = HealthRouteImport.update({
   id: '/health',
   path: '/health',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GoalsRoute = GoalsRouteImport.update({
+  id: '/goals',
+  path: '/goals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EducationRoute = EducationRouteImport.update({
+  id: '/education',
+  path: '/education',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DashboardRoute = DashboardRouteImport.update({
@@ -58,18 +112,36 @@ export interface FileRoutesByFullPath {
   '/advisor': typeof AdvisorRoute
   '/auth': typeof AuthRoute
   '/dashboard': typeof DashboardRoute
+  '/education': typeof EducationRoute
+  '/goals': typeof GoalsRoute
   '/health': typeof HealthRoute
+  '/insights': typeof InsightsRoute
+  '/investments': typeof InvestmentsRoute
   '/loading': typeof LoadingRoute
   '/pipeline': typeof PipelineRoute
+  '/reports': typeof ReportsRoute
+  '/risk': typeof RiskRoute
+  '/settings': typeof SettingsRoute
+  '/simulator': typeof SimulatorRoute
+  '/transactions': typeof TransactionsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/advisor': typeof AdvisorRoute
   '/auth': typeof AuthRoute
   '/dashboard': typeof DashboardRoute
+  '/education': typeof EducationRoute
+  '/goals': typeof GoalsRoute
   '/health': typeof HealthRoute
+  '/insights': typeof InsightsRoute
+  '/investments': typeof InvestmentsRoute
   '/loading': typeof LoadingRoute
   '/pipeline': typeof PipelineRoute
+  '/reports': typeof ReportsRoute
+  '/risk': typeof RiskRoute
+  '/settings': typeof SettingsRoute
+  '/simulator': typeof SimulatorRoute
+  '/transactions': typeof TransactionsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -77,9 +149,18 @@ export interface FileRoutesById {
   '/advisor': typeof AdvisorRoute
   '/auth': typeof AuthRoute
   '/dashboard': typeof DashboardRoute
+  '/education': typeof EducationRoute
+  '/goals': typeof GoalsRoute
   '/health': typeof HealthRoute
+  '/insights': typeof InsightsRoute
+  '/investments': typeof InvestmentsRoute
   '/loading': typeof LoadingRoute
   '/pipeline': typeof PipelineRoute
+  '/reports': typeof ReportsRoute
+  '/risk': typeof RiskRoute
+  '/settings': typeof SettingsRoute
+  '/simulator': typeof SimulatorRoute
+  '/transactions': typeof TransactionsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -88,27 +169,54 @@ export interface FileRouteTypes {
     | '/advisor'
     | '/auth'
     | '/dashboard'
+    | '/education'
+    | '/goals'
     | '/health'
+    | '/insights'
+    | '/investments'
     | '/loading'
     | '/pipeline'
+    | '/reports'
+    | '/risk'
+    | '/settings'
+    | '/simulator'
+    | '/transactions'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/advisor'
     | '/auth'
     | '/dashboard'
+    | '/education'
+    | '/goals'
     | '/health'
+    | '/insights'
+    | '/investments'
     | '/loading'
     | '/pipeline'
+    | '/reports'
+    | '/risk'
+    | '/settings'
+    | '/simulator'
+    | '/transactions'
   id:
     | '__root__'
     | '/'
     | '/advisor'
     | '/auth'
     | '/dashboard'
+    | '/education'
+    | '/goals'
     | '/health'
+    | '/insights'
+    | '/investments'
     | '/loading'
     | '/pipeline'
+    | '/reports'
+    | '/risk'
+    | '/settings'
+    | '/simulator'
+    | '/transactions'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -116,13 +224,57 @@ export interface RootRouteChildren {
   AdvisorRoute: typeof AdvisorRoute
   AuthRoute: typeof AuthRoute
   DashboardRoute: typeof DashboardRoute
+  EducationRoute: typeof EducationRoute
+  GoalsRoute: typeof GoalsRoute
   HealthRoute: typeof HealthRoute
+  InsightsRoute: typeof InsightsRoute
+  InvestmentsRoute: typeof InvestmentsRoute
   LoadingRoute: typeof LoadingRoute
   PipelineRoute: typeof PipelineRoute
+  ReportsRoute: typeof ReportsRoute
+  RiskRoute: typeof RiskRoute
+  SettingsRoute: typeof SettingsRoute
+  SimulatorRoute: typeof SimulatorRoute
+  TransactionsRoute: typeof TransactionsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/transactions': {
+      id: '/transactions'
+      path: '/transactions'
+      fullPath: '/transactions'
+      preLoaderRoute: typeof TransactionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/simulator': {
+      id: '/simulator'
+      path: '/simulator'
+      fullPath: '/simulator'
+      preLoaderRoute: typeof SimulatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/risk': {
+      id: '/risk'
+      path: '/risk'
+      fullPath: '/risk'
+      preLoaderRoute: typeof RiskRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reports': {
+      id: '/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/pipeline': {
       id: '/pipeline'
       path: '/pipeline'
@@ -137,11 +289,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoadingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/investments': {
+      id: '/investments'
+      path: '/investments'
+      fullPath: '/investments'
+      preLoaderRoute: typeof InvestmentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights': {
+      id: '/insights'
+      path: '/insights'
+      fullPath: '/insights'
+      preLoaderRoute: typeof InsightsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/health': {
       id: '/health'
       path: '/health'
       fullPath: '/health'
       preLoaderRoute: typeof HealthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/goals': {
+      id: '/goals'
+      path: '/goals'
+      fullPath: '/goals'
+      preLoaderRoute: typeof GoalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/education': {
+      id: '/education'
+      path: '/education'
+      fullPath: '/education'
+      preLoaderRoute: typeof EducationRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dashboard': {
@@ -180,9 +360,18 @@ const rootRouteChildren: RootRouteChildren = {
   AdvisorRoute: AdvisorRoute,
   AuthRoute: AuthRoute,
   DashboardRoute: DashboardRoute,
+  EducationRoute: EducationRoute,
+  GoalsRoute: GoalsRoute,
   HealthRoute: HealthRoute,
+  InsightsRoute: InsightsRoute,
+  InvestmentsRoute: InvestmentsRoute,
   LoadingRoute: LoadingRoute,
   PipelineRoute: PipelineRoute,
+  ReportsRoute: ReportsRoute,
+  RiskRoute: RiskRoute,
+  SettingsRoute: SettingsRoute,
+  SimulatorRoute: SimulatorRoute,
+  TransactionsRoute: TransactionsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
