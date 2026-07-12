@@ -17,6 +17,11 @@ import {
   Bell,
   Search,
   LogOut,
+  Cpu,
+  Radar,
+  History,
+  Zap,
+  Brain,
 } from "lucide-react";
 import { AuraLogo } from "./AuraLogo";
 import { AIAvatar } from "./AIAvatar";
@@ -24,9 +29,14 @@ import { customer } from "@/lib/mockData";
 
 const nav = [
   { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
+  { to: "/twin", label: "Financial Twin", icon: Cpu },
   { to: "/health", label: "Financial Health", icon: HeartPulse },
   { to: "/advisor", label: "AI Advisor", icon: Sparkles },
+  { to: "/reasoning", label: "AI Reasoning", icon: Brain },
   { to: "/pipeline", label: "AI Architecture", icon: Network },
+  { to: "/actions", label: "Next Best Actions", icon: Zap },
+  { to: "/forecast", label: "Forecast", icon: Radar },
+  { to: "/timeline", label: "Timeline", icon: History },
   { to: "/transactions", label: "Transactions", icon: Receipt },
   { to: "/insights", label: "Spending Insights", icon: Lightbulb },
   { to: "/goals", label: "Goals", icon: Target },
@@ -37,6 +47,7 @@ const nav = [
   { to: "/reports", label: "Reports", icon: FileBarChart },
   { to: "/settings", label: "Settings", icon: Settings },
 ] as const;
+
 
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
