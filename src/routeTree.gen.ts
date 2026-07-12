@@ -9,26 +9,41 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TwinRouteImport } from './routes/twin'
 import { Route as TransactionsRouteImport } from './routes/transactions'
+import { Route as TimelineRouteImport } from './routes/timeline'
 import { Route as SimulatorRouteImport } from './routes/simulator'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as RiskRouteImport } from './routes/risk'
 import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as ReasoningRouteImport } from './routes/reasoning'
 import { Route as PipelineRouteImport } from './routes/pipeline'
 import { Route as LoadingRouteImport } from './routes/loading'
 import { Route as InvestmentsRouteImport } from './routes/investments'
 import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as HealthRouteImport } from './routes/health'
 import { Route as GoalsRouteImport } from './routes/goals'
+import { Route as ForecastRouteImport } from './routes/forecast'
 import { Route as EducationRouteImport } from './routes/education'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AdvisorRouteImport } from './routes/advisor'
+import { Route as ActionsRouteImport } from './routes/actions'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TwinRoute = TwinRouteImport.update({
+  id: '/twin',
+  path: '/twin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TransactionsRoute = TransactionsRouteImport.update({
   id: '/transactions',
   path: '/transactions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TimelineRoute = TimelineRouteImport.update({
+  id: '/timeline',
+  path: '/timeline',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SimulatorRoute = SimulatorRouteImport.update({
@@ -49,6 +64,11 @@ const RiskRoute = RiskRouteImport.update({
 const ReportsRoute = ReportsRouteImport.update({
   id: '/reports',
   path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReasoningRoute = ReasoningRouteImport.update({
+  id: '/reasoning',
+  path: '/reasoning',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PipelineRoute = PipelineRouteImport.update({
@@ -81,6 +101,11 @@ const GoalsRoute = GoalsRouteImport.update({
   path: '/goals',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ForecastRoute = ForecastRouteImport.update({
+  id: '/forecast',
+  path: '/forecast',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EducationRoute = EducationRouteImport.update({
   id: '/education',
   path: '/education',
@@ -101,6 +126,11 @@ const AdvisorRoute = AdvisorRouteImport.update({
   path: '/advisor',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ActionsRoute = ActionsRouteImport.update({
+  id: '/actions',
+  path: '/actions',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -109,142 +139,191 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/actions': typeof ActionsRoute
   '/advisor': typeof AdvisorRoute
   '/auth': typeof AuthRoute
   '/dashboard': typeof DashboardRoute
   '/education': typeof EducationRoute
+  '/forecast': typeof ForecastRoute
   '/goals': typeof GoalsRoute
   '/health': typeof HealthRoute
   '/insights': typeof InsightsRoute
   '/investments': typeof InvestmentsRoute
   '/loading': typeof LoadingRoute
   '/pipeline': typeof PipelineRoute
+  '/reasoning': typeof ReasoningRoute
   '/reports': typeof ReportsRoute
   '/risk': typeof RiskRoute
   '/settings': typeof SettingsRoute
   '/simulator': typeof SimulatorRoute
+  '/timeline': typeof TimelineRoute
   '/transactions': typeof TransactionsRoute
+  '/twin': typeof TwinRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/actions': typeof ActionsRoute
   '/advisor': typeof AdvisorRoute
   '/auth': typeof AuthRoute
   '/dashboard': typeof DashboardRoute
   '/education': typeof EducationRoute
+  '/forecast': typeof ForecastRoute
   '/goals': typeof GoalsRoute
   '/health': typeof HealthRoute
   '/insights': typeof InsightsRoute
   '/investments': typeof InvestmentsRoute
   '/loading': typeof LoadingRoute
   '/pipeline': typeof PipelineRoute
+  '/reasoning': typeof ReasoningRoute
   '/reports': typeof ReportsRoute
   '/risk': typeof RiskRoute
   '/settings': typeof SettingsRoute
   '/simulator': typeof SimulatorRoute
+  '/timeline': typeof TimelineRoute
   '/transactions': typeof TransactionsRoute
+  '/twin': typeof TwinRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/actions': typeof ActionsRoute
   '/advisor': typeof AdvisorRoute
   '/auth': typeof AuthRoute
   '/dashboard': typeof DashboardRoute
   '/education': typeof EducationRoute
+  '/forecast': typeof ForecastRoute
   '/goals': typeof GoalsRoute
   '/health': typeof HealthRoute
   '/insights': typeof InsightsRoute
   '/investments': typeof InvestmentsRoute
   '/loading': typeof LoadingRoute
   '/pipeline': typeof PipelineRoute
+  '/reasoning': typeof ReasoningRoute
   '/reports': typeof ReportsRoute
   '/risk': typeof RiskRoute
   '/settings': typeof SettingsRoute
   '/simulator': typeof SimulatorRoute
+  '/timeline': typeof TimelineRoute
   '/transactions': typeof TransactionsRoute
+  '/twin': typeof TwinRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/actions'
     | '/advisor'
     | '/auth'
     | '/dashboard'
     | '/education'
+    | '/forecast'
     | '/goals'
     | '/health'
     | '/insights'
     | '/investments'
     | '/loading'
     | '/pipeline'
+    | '/reasoning'
     | '/reports'
     | '/risk'
     | '/settings'
     | '/simulator'
+    | '/timeline'
     | '/transactions'
+    | '/twin'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/actions'
     | '/advisor'
     | '/auth'
     | '/dashboard'
     | '/education'
+    | '/forecast'
     | '/goals'
     | '/health'
     | '/insights'
     | '/investments'
     | '/loading'
     | '/pipeline'
+    | '/reasoning'
     | '/reports'
     | '/risk'
     | '/settings'
     | '/simulator'
+    | '/timeline'
     | '/transactions'
+    | '/twin'
   id:
     | '__root__'
     | '/'
+    | '/actions'
     | '/advisor'
     | '/auth'
     | '/dashboard'
     | '/education'
+    | '/forecast'
     | '/goals'
     | '/health'
     | '/insights'
     | '/investments'
     | '/loading'
     | '/pipeline'
+    | '/reasoning'
     | '/reports'
     | '/risk'
     | '/settings'
     | '/simulator'
+    | '/timeline'
     | '/transactions'
+    | '/twin'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ActionsRoute: typeof ActionsRoute
   AdvisorRoute: typeof AdvisorRoute
   AuthRoute: typeof AuthRoute
   DashboardRoute: typeof DashboardRoute
   EducationRoute: typeof EducationRoute
+  ForecastRoute: typeof ForecastRoute
   GoalsRoute: typeof GoalsRoute
   HealthRoute: typeof HealthRoute
   InsightsRoute: typeof InsightsRoute
   InvestmentsRoute: typeof InvestmentsRoute
   LoadingRoute: typeof LoadingRoute
   PipelineRoute: typeof PipelineRoute
+  ReasoningRoute: typeof ReasoningRoute
   ReportsRoute: typeof ReportsRoute
   RiskRoute: typeof RiskRoute
   SettingsRoute: typeof SettingsRoute
   SimulatorRoute: typeof SimulatorRoute
+  TimelineRoute: typeof TimelineRoute
   TransactionsRoute: typeof TransactionsRoute
+  TwinRoute: typeof TwinRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/twin': {
+      id: '/twin'
+      path: '/twin'
+      fullPath: '/twin'
+      preLoaderRoute: typeof TwinRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/transactions': {
       id: '/transactions'
       path: '/transactions'
       fullPath: '/transactions'
       preLoaderRoute: typeof TransactionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/timeline': {
+      id: '/timeline'
+      path: '/timeline'
+      fullPath: '/timeline'
+      preLoaderRoute: typeof TimelineRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/simulator': {
@@ -273,6 +352,13 @@ declare module '@tanstack/react-router' {
       path: '/reports'
       fullPath: '/reports'
       preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reasoning': {
+      id: '/reasoning'
+      path: '/reasoning'
+      fullPath: '/reasoning'
+      preLoaderRoute: typeof ReasoningRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pipeline': {
@@ -317,6 +403,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GoalsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/forecast': {
+      id: '/forecast'
+      path: '/forecast'
+      fullPath: '/forecast'
+      preLoaderRoute: typeof ForecastRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/education': {
       id: '/education'
       path: '/education'
@@ -345,6 +438,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdvisorRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/actions': {
+      id: '/actions'
+      path: '/actions'
+      fullPath: '/actions'
+      preLoaderRoute: typeof ActionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -357,21 +457,26 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ActionsRoute: ActionsRoute,
   AdvisorRoute: AdvisorRoute,
   AuthRoute: AuthRoute,
   DashboardRoute: DashboardRoute,
   EducationRoute: EducationRoute,
+  ForecastRoute: ForecastRoute,
   GoalsRoute: GoalsRoute,
   HealthRoute: HealthRoute,
   InsightsRoute: InsightsRoute,
   InvestmentsRoute: InvestmentsRoute,
   LoadingRoute: LoadingRoute,
   PipelineRoute: PipelineRoute,
+  ReasoningRoute: ReasoningRoute,
   ReportsRoute: ReportsRoute,
   RiskRoute: RiskRoute,
   SettingsRoute: SettingsRoute,
   SimulatorRoute: SimulatorRoute,
+  TimelineRoute: TimelineRoute,
   TransactionsRoute: TransactionsRoute,
+  TwinRoute: TwinRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
